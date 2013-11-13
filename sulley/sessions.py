@@ -865,6 +865,7 @@ class session (pgraph.graph):
             else:
                 sock.sendto(data, (self.targets[0].host, self.targets[0].port))
             self.logger.debug("Packet sent : " + repr(data))
+            time.sleep(0.5)
         except Exception, inst:
             self.logger.error("Socket error, send: %s" % inst)
 
